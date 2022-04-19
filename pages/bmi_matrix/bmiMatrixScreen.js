@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { View, TouchableOpacity, StyleSheet,SafeAreaView } from 'react-native'
 import { Text, Title,TextInput,Button,Modal, Portal,  } from 'react-native-paper';
-// import { SafeAreaView } from 'react-native-safe-area-context';
+import styles from '../../config/utility/globalStyle';
 
 const BmiMatrixScreen = () => {
 
@@ -44,7 +44,7 @@ const BmiMatrixScreen = () => {
     return (
         <SafeAreaView>
           <Title style= {styles.title}>BMI Calculator</Title>
-          <View style={{top : 50, alignItems : 'center' ,}}>
+          <View style={{top : 50, alignItems : 'center'}}>
             <TextInput
                 style ={{width : 250, margin : 20 }}
                 label="Height"
@@ -75,20 +75,4 @@ const BmiMatrixScreen = () => {
         </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-
-    
-    title:{
-       paddingTop:30,
-       paddingBottom:10,
-       textAlign: "center",
-       fontSize: 30,
-       fontWeight:"bold",
-    },
-    label:{
-       marginLeft: 15,
-    }
- })
-
 export default BmiMatrixScreen
