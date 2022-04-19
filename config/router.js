@@ -7,12 +7,13 @@ import {
 import { transition_config } from './utility/transition_config.js';
 import BMI_Matrix from '../pages/bmi_matrix/bmiMatrixScreen';
 import Array_Pointer from '../pages/array_pointer/arrayPointerScreen';
+import main_menu from '../pages/main_menu/MainMenuScreen';
 
 const Stack = createStackNavigator();
 const router = () => {
   return (
     <Stack.Navigator
-      initialRouteName="BMI_Matrix"
+      initialRouteName="main_menu"
       screenOptions={{
         headerShown: false,
       }}
@@ -27,6 +28,21 @@ const router = () => {
             name="BMI_Matrix"
             component={BMI_Matrix}
             screenOptions={{
+            // headerShown: false,
+            }}
+            options={{
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+            transitionSpec:{
+                open: transition_config,
+                close: transition_config
+            },
+            title : ' BMI Matrix'
+            }}
+        />         
+        <Stack.Screen
+            name="Array_Pointer"
+            component={Array_Pointer}
+            screenOptions={{
             headerShown: false,
             }}
             options={{
@@ -34,12 +50,13 @@ const router = () => {
             transitionSpec:{
                 open: transition_config,
                 close: transition_config
-            }
+            },
+            title : 'Array Pointer'
             }}
         />         
         <Stack.Screen
-            name="Array_Pointer"
-            component={Array_Pointer}
+            name="main_menu"
+            component={main_menu}
             screenOptions={{
             headerShown: false,
             }}
