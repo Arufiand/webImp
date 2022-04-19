@@ -15,7 +15,7 @@ const BmiMatrixScreen = () => {
     const containerStyle = {backgroundColor: 'white', padding: 30, height : 200, width : 300, borderRadius: 100/2, alignSelf : 'center', alignContent : 'center'};
 
     const calculate = (height, weight) => {
-        var result = (parseFloat(weight)*10000) / (parseFloat(height)*parseFloat(height));
+        var result = (parseFloat(weight)) / ((parseFloat(height)*0.01)*(parseFloat(height)*0.01));
         result = result.toFixed(2);
         setBmi(result);
         if(result) {
