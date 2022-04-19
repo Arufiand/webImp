@@ -15,13 +15,14 @@ const BmiMatrixScreen = () => {
     const containerStyle = {backgroundColor: 'white', padding: 30, height : 200, width : 300, borderRadius: 100/2, alignSelf : 'center', alignContent : 'center'};
 
     const calculate = (height, weight) => {
-        var result = (parseFloat(weight) *1000) / (parseFloat(height)*parseFloat(height));
+        var result = (parseFloat(weight)*10000) / (parseFloat(height)*parseFloat(height));
         result = result.toFixed(2);
         setBmi(result);
-        console.log(result);
-        setHeight(0);
-        setWeight(0);
-        showModal();
+        if(result) {
+            setHeight(0);
+            setWeight(0);
+            showModal();
+        }
         //showing result per BMI standards
         if(result < 18.5){
             setResult('Underweight');
