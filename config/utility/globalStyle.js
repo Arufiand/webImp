@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
        fontWeight:"bold",
     },
     label:{
-       marginLeft: 15,
+       flex : 1,
+       flexDirection : 'column'
     },
     button : {
         margin : 10, height : 50, width : 300, borderRadius : 25, alignItems : 'center', alignContent : 'center', padding : 7
